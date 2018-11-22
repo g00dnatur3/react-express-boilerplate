@@ -7,7 +7,6 @@ import BackIcon from '@material-ui/icons/ArrowBackIos'
 import CartIcon from '@material-ui/icons/ShoppingCart'
 import Badge from '@material-ui/core/Badge'
 import SearchBar from '../components/SearchBar'
-import {getCartSize} from '../../helpers/CookieHelper'
 import {onEvent, offEvent, events} from '../../event'
 import Drawer from '@material-ui/core/Drawer'
 import theme from '../../theme'
@@ -53,18 +52,18 @@ class Style extends BaseStyle {
     // borderWidth: 1,
     // borderStyle: 'solid',
     // borderColor: 'black',
-    minWidth: 950,
+    //minWidth: 950,
   }
   toolBar: React.CSSProperties = {
     justifyContent: 'space-between',
   }
   title: React.CSSProperties = {
     fontSize: 24,
-    minWidth: 160,
+    //minWidth: 160,
     color: 'white',
     // borderWidth: 1,
     // borderStyle: 'solid',
-    textAlign: 'center',
+    //textAlign: 'center',
   }
   icon: React.CSSProperties = {
     fontSize: 32,
@@ -103,11 +102,11 @@ export class TitleBar extends React.Component<Props, {}> {
   _cartListener: () => void = () => this.forceUpdate()
 
   componentDidMount() {
-    onEvent(events.cart, this._cartListener)
+    //onEvent(events.cart, this._cartListener)
   }
 
   componentWillUnmount() {
-    if (this._cartListener) offEvent(events.cart, this._cartListener)
+    //if (this._cartListener) offEvent(events.cart, this._cartListener)
   }
 
   render(): JSX.Element {
@@ -161,20 +160,20 @@ export class TitleBar extends React.Component<Props, {}> {
     }
     if (this.props.leftIcon === 'back') leftIcon = <BackIcon style={{...style.icon, marginLeft: 60}} />
 
-    if (this.props.rightIcon === 'cart') {
-      const onCartClick = () => window.location.href='/cart'
-      const cartSize = getCartSize()
-      if (cartSize > 0) {
-        rightIcon = (
-          <Badge onClick={onCartClick} style={style.badge} badgeContent={cartSize} color='secondary'>
-            <CartIcon onClick={onCartClick} style={style.icon} />
-          </Badge>
-        )
-      }
-      else {
-        rightIcon = (<CartIcon onClick={onCartClick} style={{...style.icon, marginRight: 60}} />)
-      }
-    }
+    // if (this.props.rightIcon === 'cart') {
+    //   const onCartClick = () => window.location.href='/cart'
+    //   const cartSize = getCartSize()
+    //   if (cartSize > 0) {
+    //     rightIcon = (
+    //       <Badge onClick={onCartClick} style={style.badge} badgeContent={cartSize} color='secondary'>
+    //         <CartIcon onClick={onCartClick} style={style.icon} />
+    //       </Badge>
+    //     )
+    //   }
+    //   else {
+    //     rightIcon = (<CartIcon onClick={onCartClick} style={{...style.icon, marginRight: 60}} />)
+    //   }
+    // }
 
     const drawer = (
       <Drawer 
@@ -188,8 +187,8 @@ export class TitleBar extends React.Component<Props, {}> {
 
     return (
     <div>
-      <div style={style.container}>
 
+      <div style={style.container}>
         <div style={{...style.row, justifyContent: 'space-between', alignItems: 'center', height: 80}}>
           <div style={style.row}>
             <IconButton style={{...style.button, backgroundColor: 'transparent'}} color='inherit' onClick={this.props.leftClick}>
@@ -201,12 +200,11 @@ export class TitleBar extends React.Component<Props, {}> {
             {rightIcon}
           </IconButton>
         </div>
-
         { this.props.leftIcon === 'menu' ? drawer : null }
       </div>
 
-      <div>
-        <Typography style={{...style.row, justifyContent: 'center', marginTop: -80, height: 80, ...style.title, minWidth: 1080}} variant='title' color='inherit'>
+      <div style={{...style.row, justifyContent: 'center', marginTop: -80, height: 80, ...style.title, paddingLeft: 2}}>
+        <Typography variant='title' color='inherit'>
           {this.props.title}
           <div style={{width: 20}}></div>
           {searchBar}

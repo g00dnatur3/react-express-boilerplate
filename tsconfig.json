@@ -30,7 +30,7 @@
     "alwaysStrict": true,                     /* Parse in strict mode and emit "use strict" for each source file. */
 
     /* Additional Checks */
-    "noUnusedLocals": true,                   /* Report errors on unused locals. */
+    "noUnusedLocals": false,                   /* Report errors on unused locals. */
     //"noUnusedParameters": true,             /* Report errors on unused parameters. */
     "noImplicitReturns": true,                /* Report error when not all code paths in function return a value. */
     "noFallthroughCasesInSwitch": true,       /* Report errors for fallthrough cases in switch statement. */
@@ -56,18 +56,17 @@
     "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
     "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   },
-    "include": [
-        "src/server/express/**/*.ts",
-        "src/server/express/templates/*.tsx",
-        "src/model/**/*.ts",
-        "src/fixtures/**/*.ts",
-        "src/utils/**/*.ts",
-        "test/**/*.ts"
-    ],
-    "exclude": [
-        "node_modules",
-        "src/client/**/*.tsx",
-        "src/client/**/*.ts",
-        "src/server/play"
-    ]
+  "include": [
+    "src/server/express/**/*.ts",
+    "src/server/express/templates/*.tsx",
+    "src/model/**/*.ts",
+    "src/fixtures/**/*.ts",
+    "src/utils/**/*.ts",
+    "test/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/client/**/*.tsx",
+    "src/client/**/*.ts"
+  ]
 }

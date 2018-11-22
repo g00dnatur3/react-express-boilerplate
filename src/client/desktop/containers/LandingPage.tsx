@@ -7,7 +7,6 @@ import qs from 'query-string'
 import axios from 'axios'
 import Typography from '@material-ui/core/Typography'
 import TitleBar from '../components/TitleBar'
-import {clearLikes, getUser} from '../../helpers/CookieHelper'
 
 import getLog from '../../../utils/log'
 const log = getLog('LandingPage')
@@ -33,21 +32,16 @@ class Style extends BaseStyle {
 		display: 'flex',
 		flexDirection: 'column',
 		//alignContent: 'center',
-		//alignItems: 'center',
+		alignItems: 'center',
 		justifyContent: 'center',
 		//justifyItems: 'center',
     // borderWidth: 1,
 		// borderStyle: 'solid',
-		marginLeft: 20, marginRight: 20,
-		minWidth: 900
 	}
 
   separator: React.CSSProperties = {
     ...this.separator,
 		marginTop: 20
-	}
-  tabbar: React.CSSProperties = {
-		paddingTop: 103
 	}
 }
 
@@ -56,6 +50,7 @@ export class LandingPage extends BaseContainer<{}, State> {
 	state: State = {loading: true}
 
 	componentDidMount() {
+		setTimeout(() => this.setState({loading: false}), 1000)
 		// const params = qs.parse(location.search)
 		// if (!params.fr) {
 		// 	const err = 'missing required query-param: fr'
@@ -68,8 +63,7 @@ export class LandingPage extends BaseContainer<{}, State> {
 		// 	axios.get(url)
 		// 	.then(res => {
 		// 		log.info(res.data)
-		// 		this.setState({loading: false
-		// 		})
+		// 		this.setState({loading: false})
 		// 	})
 		// 	.catch(err => {
 		// 		//console.log(err)
@@ -97,9 +91,9 @@ export class LandingPage extends BaseContainer<{}, State> {
 					//onCancelSearch={() => this.setState({searchterm: ''})}
 				/>
 				<div style={{paddingTop: 25}}></div>
-					<div style={style.content}>
-					World
-					</div>
+				<div style={style.content}>
+				World
+				</div>
 			</div>
 		)
 	}
