@@ -116,9 +116,6 @@ export class TitleBar extends React.Component<Props, {}> {
     const getMenuItem = (t, href) => {
       const s = {marginRight: 0}
       const icon = 
-        t === 'Fundraise with Us' ? <CardGiftcard style={s} /> : 
-        t === 'Merchant'          ? <ShoppingBasket style={s} /> :
-        t === 'Lost Certificate?' ? <FindInPage style={s} /> :
         t === 'About Us'          ? <PermContactCalendar style={s} /> :
         t === 'Contact Us'        ? <Group style={s} /> :
         t === 'Terms of Use'      ? <FolderOpen style={s} /> :
@@ -135,9 +132,6 @@ export class TitleBar extends React.Component<Props, {}> {
     const drawerMenu = (
       <div style={{width: 250, paddingTop: 15}}>
         <div>
-        {getMenuItem('Fundraise with Us', '#')}
-        {getMenuItem('Merchant', '#')}
-        {getMenuItem('Lost Certificate?', '/lostcertificate')}
         {getMenuItem('About Us', '#')}
         {getMenuItem('Contact Us', '#')}
         {getMenuItem('Terms of Use', '#')}
@@ -194,7 +188,7 @@ export class TitleBar extends React.Component<Props, {}> {
             <IconButton style={{...style.button, backgroundColor: 'transparent'}} color='inherit' onClick={this.props.leftClick}>
               {leftIcon}
             </IconButton>
-            <div style={{...style.title, paddingLeft: 50, paddingRight: 20, fontSize: 18}}>Z-Fundraising &reg;</div>
+            <div style={{...style.title, paddingLeft: 50, paddingRight: 20, fontSize: 18}}>Branding &reg;</div>
           </div>
           <IconButton style={{...style.button, backgroundColor: 'transparent', minWidth: 100}} color='inherit' onClick={this.props.rightClick}>
             {rightIcon}
