@@ -1,6 +1,5 @@
 import { Router, Request, Response, NextFunction } from 'express'
 import HttpError from '../HttpError'
-import dao from '../../services/dao'
 import getLog from '../../../../src/utils/log'
 
 const log = getLog(__filename)

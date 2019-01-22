@@ -14,4 +14,5 @@ export const errorHandler = (err: any, req: Request, res: Response, next: NextFu
   }
   res.status(status).send(_err)
 }
+
 export default errorHandler
