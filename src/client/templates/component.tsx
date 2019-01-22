@@ -1,5 +1,5 @@
 import * as React from 'react'
-import BaseStyle from '../base/BaseStyle'
+import BaseStyle from '../desktop/base/BaseStyle'
 import getLog from '../../utils/log'
 const log = getLog('OfferDetails')
 

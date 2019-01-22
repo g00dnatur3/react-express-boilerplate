@@ -82,7 +82,7 @@ const renderHtml = (opts: {content: any, footer: any, title: any}) => {
 
         <tr>
           <td {...header}>
-          <Span {...headerFont}>ZFundraising</Span>
+          <Span {...headerFont}>My Business</Span>
           </td>
         </tr>
 
@@ -107,7 +107,7 @@ const renderHtml = (opts: {content: any, footer: any, title: any}) => {
 
         <tr>
           <td {...footer}>
-          <Span {...footerFont}>&copy; 2018 ZFundraising</Span>
+          <Span {...footerFont}>&copy; 2019</Span>
           </td>
         </tr>
       </Box>

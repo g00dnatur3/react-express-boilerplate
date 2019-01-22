@@ -46,11 +46,11 @@
 //   return (
 //     <Span fontSize={14}>
 //     <br/>
-//     At any time, if you have any questions, you can reach out to us at feedback@zfundraising.com.
+//     At any time, if you have any questions, you can reach out to us at feedback@example.com.
 //     <br/><br/>
 //     Sincerely,
 //     <br/><br/>
-//     Your ZFundraising Team
+//     Your Business Team
 //     </Span>
 //   )
 // }

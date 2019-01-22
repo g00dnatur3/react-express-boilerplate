@@ -1,14 +1,10 @@
 import * as React from 'react'
-import BaseContainer from '../base/BaseContainer'
-import BaseState from '../base/BaseState'
-import BaseProps from '../base/BaseProps'
-import BaseStyle from '../base/BaseStyle'
-import TitleBar from '../components/TitleBar'
+import BaseContainer from '../desktop/base/BaseContainer'
+import BaseState from '../desktop/base/BaseState'
+import BaseProps from '../desktop/base/BaseProps'
+import BaseStyle from '../desktop/base/BaseStyle'
+import TitleBar from '../desktop/components/TitleBar'
 import getLog from '../../utils/log'
-import { colors } from '@material-ui/core'
-import Typography from '@material-ui/core/Typography'
-import {deserializeArray} from '../../utils/json'
-import axios from 'axios'
 
 const log = getLog('MyPage')
 
